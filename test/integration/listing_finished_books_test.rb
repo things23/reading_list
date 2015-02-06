@@ -6,7 +6,7 @@ class ListingFinishedBooksTest < ActionDispatch::IntegrationTest
     Book.create!(title: 'Not finished',  finished_at: nil)
   end
   test "list finished books in json" do
-    get '/finished_books', {}, { 'Accept' => 'application/json' }
+    get '/api/finished_books', {}, { 'Accept' => 'application/json' }
 
     assert_equal 200, response.status
     assert_equal Mime::JSON, response.content_type
@@ -15,7 +15,7 @@ class ListingFinishedBooksTest < ActionDispatch::IntegrationTest
   end
 
   test 'list finished books in xml' do
-    get '/finished_books', {}, { 'Accept' => 'application/xml'}
+    get '/api/finished_books', {}, { 'Accept' => 'application/xml'}
 
     assert_equal 200, response.status
     assert_equal Mime::XML, response.content_type

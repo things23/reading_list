@@ -5,7 +5,7 @@ class DeletingBooksTest < ActionDispatch::IntegrationTest
     @book = Book.create!(title: 'Pragmatic')
   end
   test 'delete books' do
-    delete "/books/#{@book.id}"
+    delete "/api/books/#{@book.id}"
 
     assert_equal 204, response.status
   end

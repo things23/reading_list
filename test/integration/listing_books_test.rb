@@ -9,7 +9,7 @@ class ListingBooksTest < ActionDispatch::IntegrationTest
   end
 
   test 'listing books' do
-    get '/books'
+    get '/api/books'
 
     assert_equal 200, response.status
     assert_equal Mime::JSON, response.content_type
@@ -22,7 +22,7 @@ class ListingBooksTest < ActionDispatch::IntegrationTest
   end
 
   test 'lists to rated books' do
-    get '/books?rating=5'
+    get '/api/books?rating=5'
 
     assert_equal 200, response.status
     assert_equal Mime::JSON, response.content_type
