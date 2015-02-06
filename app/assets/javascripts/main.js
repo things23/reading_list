@@ -30,7 +30,6 @@ App.GenresController = Ember.ArrayController.extend({
   sortProperties: ['name']
 });
 
-
 App.ReviewsNewRoute = Ember.Route.extend({
   model: function() {
     return Ember.RSVP.hash({
@@ -54,6 +53,7 @@ App.ReviewsNewRoute = Ember.Route.extend({
     }
   }
 });
+
 App.ReviewsNewController = Ember.Controller.extend({
   ratings: [5,4,3,2,1],
   actions: {
@@ -67,12 +67,8 @@ App.ReviewsNewController = Ember.Controller.extend({
 });
 
 App.ApplicationAdapter = DS.ActiveModelAdapter.extend({
-  namespace: 'api',
-  headers: {
-    'Authorization': 'Token token=EMBER-TOKEN'
-  }
+  namespace: 'api'
 });
-
 
 App.BookDetailsComponent = Ember.Component.extend({
   classNameBindings: ['ratingClass'],
@@ -100,5 +96,4 @@ App.Book = DS.Model.extend({
   image: function() {
     return "http://images.amazon.com/images/P/"+this.get('amazon_id')+".01.ZTZZZZZZ.jpg";
   }.property('amazon_id')
-
 });
