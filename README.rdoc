@@ -1,6 +1,6 @@
 == README
 
-Small app with Rails API and Ember.js on the client-side
+Small app with Rails API and Ember.js on the client-side.
 Final work after finishing code school courses:
 * https://www.codeschool.com/courses/warming-up-with-ember-js
 * https://www.codeschool.com/courses/surviving-apis-with-rails
